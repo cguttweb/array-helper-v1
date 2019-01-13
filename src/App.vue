@@ -7,12 +7,10 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import dropdown from './components/dropdown.vue';
 import examplebox from './components/examplebox.vue';
 
 export default {
-  // name: 'app',
   components: {
     dropdown,
     examplebox
