@@ -1,11 +1,16 @@
 <template>
-    <div class="example mt-4">
+    <div>
+        <textarea class="example" v-for="method in arrayMethods" :key="method" v-model="exampletext"></textarea>
     </div>
 </template>
 
 <script>
 export default {
-
+    computed: {
+        exampletext() {
+            return 
+        }
+    }
 }
 </script>
 

@@ -4,7 +4,7 @@
         <p>{{ info }}</p>
         <b-form-select v-model="selected" class="col-3 py-2">
             <option value="">Please select a method</option>
-            <option v-for="method in arrayMethods" :value="method.method" :key="method"> {{ method.name }}</option>
+            <option v-for="(method, index) in arrayMethods" :value="method.method" v-bind:key="index"> {{ method.name }}</option>
         </b-form-select>
         <p class="explain">{{ selected }}</p>
     </div>
@@ -18,10 +18,14 @@ export default {
         header: 'Array Helper',
         info: 'Use the dropdown below to learn about various array methods',
         selected: '',
+        example: '',
         arrayMethods: [
             { 
               name: 'concat',
-              method: 'This method will join two or more arrays together' 
+              method: 'This method will join two or more arrays together',
+              example: {
+                myArray: ['value1', 'value2', 'value3']
+              } 
             },
             {
               name: 'copyWithin',
