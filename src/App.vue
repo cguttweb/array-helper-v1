@@ -7,25 +7,26 @@
 </template>
 
 <script>
-import methods from './components/methods.vue';
-import examplebox from './components/examplebox.vue';
+import methods from "./components/methods.vue";
+import examplebox from "./components/examplebox.vue";
+import "./components/examplebox.vue";
 
 export default {
   components: {
     methods,
     examplebox
   }
-}
+};
 // Copy to clipboard code
 // let brandopacity = false
 //     const copyToClipboard = str => {
 //   const el = document.createElement('textarea');  // Create a <textarea> element
 //   el.value = str;                                 // Set its value to the string that you want copied
 //   el.setAttribute('readonly', '');                // Make it readonly to be tamper-proof
-//   el.style.position = 'absolute';                 
+//   el.style.position = 'absolute';
 //   el.style.left = '-9999px';                      // Move outside the screen to make it invisible
 //   document.body.appendChild(el);                  // Append the <textarea> element to the HTML document
-//   const selected =            
+//   const selected =
 //     document.getSelection().rangeCount > 0        // Check if there is any content selected previously
 //       ? document.getSelection().getRangeAt(0)     // Store selection if found
 //       : false;                                    // Mark as false to know no selection existed before
@@ -41,7 +42,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
