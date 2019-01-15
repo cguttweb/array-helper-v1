@@ -13,11 +13,11 @@
     <!-- <p class="explain">{{ selected }}</p> -->
     <b-form-input class="mb-2" v-model="search" type="text" placeholder="Search for a method"></b-form-input>
     {{ search }}
-    <b-list-group>
+    <b-list-group v-if="searchMethods == searchTerm">
       <b-list-group-item
         class="text-left"
-        v-for="(method, index) in arrayMethods"
-        v-bind:key="index"
+        v-for="method in searchMethods"
+        v-bind:key="method" 
       >{{ method.name }}</b-list-group-item>
     </b-list-group>
   </div>
@@ -32,6 +32,7 @@ export default {
       info: "Use the dropdown below to learn about various array methods",
       // selected: "",
       example: "",
+      searchMethods: '',
       search: "",
       arrayMethods: [
         {
@@ -120,9 +121,14 @@ export default {
           method: "add 1 or more elements to the front of an array"
         }
       ],
-      computed: function() {
-        let searchTerm = this.searchTerm.toLowerCase();
-        searchTerm.filter(method => this.searchTerm.method);
+      method: {
+        searchMethods() {
+          let searchTerm = this.search.toLowerCase();
+          console.log(searchTerm);
+          return this.arrayMethods.method.filter(method => {
+            return method.name.toLowerCase().includes(searchTerm);
+          });
+        }
       }
     };
   }
