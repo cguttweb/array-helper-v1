@@ -7,6 +7,10 @@
             <option v-for="(method, index) in arrayMethods" :value="method.method" v-bind:key="index"> {{ method.name }}</option>
         </b-form-select>
         <p class="explain">{{ selected }}</p>
+        <b-form-input v-model="search" type="text" placeholder="Search for a method"></b-form-input>
+        <b-list-group>
+            <b-list-group-item class="text-left" v-for="method in arrayMethods" v-bind:key="method">{{ method.name }}</b-list-group-item>
+        </b-list-group>
     </div>
 </template>
 
@@ -19,6 +23,7 @@ export default {
         info: 'Use the dropdown below to learn about various array methods',
         selected: '',
         example: '',
+        search: '',
         arrayMethods: [
             { 
               name: 'concat',
