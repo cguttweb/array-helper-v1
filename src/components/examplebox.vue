@@ -8,7 +8,7 @@
 export default {
     computed: {
         exampletext() {
-            return 
+            return 'test';
         }
     }
 }
