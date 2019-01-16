@@ -4,22 +4,18 @@
     </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
-    computed: {
-        exampletext() {
-            return 'test';
-        }
-    }
-}
-</script>
 
-<style lang="scss">
+}
+</script> -->
+
+<!-- <style lang="scss">
     .example {
         border: 1px solid #35495E;
         min-height: 200px;
         margin: auto;
         width: 80%;
     }
-</style>
+</style> -->
 

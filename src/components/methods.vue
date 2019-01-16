@@ -11,15 +11,16 @@
       >{{ method.name }}</option>
     </b-form-select>-->
     <!-- <p class="explain">{{ selected }}</p> -->
-    <b-form-input class="mb-2" v-model="search" type="text" placeholder="Search for a method"></b-form-input>
-    {{ search }}
-    <b-list-group v-if="searchMethods == searchTerm">
+    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
+    <!-- {{ search }} -->
+    <b-list-group>
       <b-list-group-item
         class="text-left"
-        v-for="method in searchMethods"
-        v-bind:key="method" 
-      >{{ method.name }}</b-list-group-item>
+        v-for="(method, index) in search"
+        v-bind:key="index" 
+      >{{ method.name }} {{ index }}</b-list-group-item>
     </b-list-group>
+    <b-form-textarea class="example"></b-form-textarea>
   </div>
 </template>
 
@@ -32,8 +33,7 @@ export default {
       info: "Use the dropdown below to learn about various array methods",
       // selected: "",
       example: "",
-      searchMethods: '',
-      search: "",
+      searchValue: "",
       arrayMethods: [
         {
           name: "concat",
@@ -122,17 +122,17 @@ export default {
         }
       ],
       method: {
-        searchMethods() {
-          let searchTerm = this.search.toLowerCase();
-          console.log(searchTerm);
-          return this.arrayMethods.method.filter(method => {
+        search:function() {
+          let searchTerm = this.searchValue.toLowerCase();
+          return this.arrayMethods.filter(method => {
             return method.name.toLowerCase().includes(searchTerm);
           });
+        // use v-if to target index if index = -1 see error else show matching value and hide others
         }
       }
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped>
