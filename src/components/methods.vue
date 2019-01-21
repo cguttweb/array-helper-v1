@@ -11,7 +11,7 @@
       >{{ method.name }}</option>
     </b-form-select>-->
     <!-- <p class="explain">{{ selected }}</p> -->
-    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
+    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method" v-on:keypress.enter="search"></b-form-input>
     <!-- {{ search }} -->
     <b-list-group>
       <b-list-group-item
@@ -121,8 +121,8 @@ export default {
           method: "add 1 or more elements to the front of an array"
         }
       ],
-      method: {
-        search:function() {
+      computed: {
+        searchValue:function() {
           let searchTerm = this.searchValue.toLowerCase();
           return this.arrayMethods.filter(method => {
             return method.name.toLowerCase().includes(searchTerm);
