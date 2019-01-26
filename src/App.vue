@@ -8,13 +8,13 @@
 
 <script>
 import methods from "./components/methods.vue";
-// import examplebox from "./components/examplebox.vue";
+import examplebox from "./components/examplebox.vue";
 import "./components/copy.js";
 
 export default {
   components: {
     methods,
-    // examplebox
+    examplebox
   }
 };
 
