@@ -11,16 +11,16 @@
       >{{ method.name }}</option>
     </b-form-select>-->
     <!-- <p class="explain">{{ selected }}</p> -->
-    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
-    <!-- {{ search }} -->
+    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method" v-on:keypress.enter="searchValue"></b-form-input>
+    {{ searchValue }}
     <b-list-group>
       <b-list-group-item
         class="text-left"
-        v-for="(method, index) in search"
+        v-for="(method, index) in arrayMethods"
         v-bind:key="index" 
-      >{{ method.name }} {{ index }}</b-list-group-item>
+      >{{ method.name }}</b-list-group-item>
     </b-list-group>
-    <b-form-textarea class="example"></b-form-textarea>
+    <!-- <b-form-textarea class="example"></b-form-textarea> -->
   </div>
 </template>
 
@@ -121,8 +121,8 @@ export default {
           method: "add 1 or more elements to the front of an array"
         }
       ],
-      method: {
-        search:function() {
+      computed: {
+        searchValue:function() {
           let searchTerm = this.searchValue.toLowerCase();
           return this.arrayMethods.filter(method => {
             return method.name.toLowerCase().includes(searchTerm);
