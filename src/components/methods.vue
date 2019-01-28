@@ -11,14 +11,14 @@
       >{{ method.name }}</option>
     </b-form-select>-->
     <!-- <p class="explain">{{ selected }}</p> -->
-    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method" v-on:keypress.enter="searchValue"></b-form-input>
+    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method" v-on:keypress.enter="searchValue()"></b-form-input>
     {{ searchValue }}
     <b-list-group>
       <b-list-group-item
         class="text-left"
         v-for="(method, index) in arrayMethods"
         v-bind:key="index" 
-      >{{ method.name }}</b-list-group-item>
+      ><strong>{{ method.name }}</strong> {{ method.method }}</b-list-group-item>
     </b-list-group>
     <!-- <b-form-textarea class="example"></b-form-textarea> -->
   </div>
@@ -30,17 +30,14 @@ export default {
   data() {
     return {
       header: "Array Helper",
-      info: "Use the dropdown below to learn about various array methods",
+      info: "Use the search below to learn about array methods",
       // selected: "",
-      example: "",
+      // example: "",
       searchValue: "",
       arrayMethods: [
         {
           name: "concat",
           method: "This method will join two or more arrays together",
-          example: {
-            myArray: ["value1", "value2", "value3"]
-          }
         },
         {
           name: "copyWithin",
@@ -121,8 +118,8 @@ export default {
           method: "add 1 or more elements to the front of an array"
         }
       ],
-      computed: {
-        searchValue:function() {
+      methods: {
+        searchValue() {
           let searchTerm = this.searchValue.toLowerCase();
           return this.arrayMethods.filter(method => {
             return method.name.toLowerCase().includes(searchTerm);
