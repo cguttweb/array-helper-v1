@@ -3,13 +3,13 @@
     <h1>{{ header }}</h1>
     <p>{{ info }}</p>
     <!-- <b-form-select v-model="selected" class="col-3 py-2">
-      <option value>Please select a method</option>
+      <option value="Please select a method"></option>
       <option
         v-for="(method, index) in arrayMethods"
         :value="method.method"
         v-bind:key="index"
       >{{ method.name }}</option>
-    </b-form-select>-->
+    </b-form-select> -->
     <!-- <p class="explain">{{ selected }}</p> -->
     <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method" v-on:keypress.enter="searchValue()"></b-form-input>
     {{ searchValue }}
@@ -74,13 +74,11 @@ export default {
         },
         {
           name: "lastIndexOf",
-          method:
-            "array is searched backwards it gives the last index value of given element will return -1 if not present"
+          method: "array is searched backwards it gives the last index value of given element will return -1 if not present"
         },
         {
           name: "map",
-          method:
-            "this is an alternative to using sort if there is a number of elements"
+          method: "this is an alternative to using sort if there is a number of elements"
         },
         {
           name: "pop",
@@ -100,13 +98,11 @@ export default {
         },
         {
           name: "slice",
-          method:
-            "returns a shallow copy of portion of an array into a new array object. It does not modify the existing array"
+          method: "returns a shallow copy of portion of an array into a new array object. It does not modify the existing array"
         },
         {
           name: "sort",
-          method:
-            "sorts the elements of array in place and returns array. If using sort elements are converted to strings and compared in unicode point value so numbers will take priority"
+          method: "sorts the elements of array in place and returns array. If using sort elements are converted to strings and compared in unicode point value so numbers will take priority"
         },
         {
           name: "splice",
