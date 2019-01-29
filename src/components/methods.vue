@@ -111,7 +111,6 @@ export default {
           method: "add 1 or more elements to the front of an array"
         }
       ],
-    
     }
   },
     methods: {
