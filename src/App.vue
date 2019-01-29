@@ -2,18 +2,21 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <methods></methods>
+    <Form></Form>
     <!-- <examplebox></examplebox> -->
   </div>
 </template>
 
 <script>
-import methods from "./components/methods.vue";
+import methods from "./components/methods";
+import Form from './components/addform';
 // import examplebox from "./components/examplebox.vue";
-import "./components/copy.js";
+// import "./components/copy.js";
 
 export default {
   components: {
     methods,
+    Form
     // examplebox
   }
 };

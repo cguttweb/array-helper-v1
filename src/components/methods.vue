@@ -12,7 +12,7 @@
     </b-form-select> -->
     <!-- <p class="explain">{{ selected }}</p> -->
     <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
-    <!-- {{ searchValue }} -->
+    <b-button class="outline-success" @click="showForm()">Show add form</b-button>
     <b-list-group>
       <b-list-group-item
         class="text-left"
@@ -38,8 +38,7 @@ export default {
         },
         {
           name: "copyWithin",
-          method:
-            "copies part of an array to another location in the same array"
+          method: "copies part of an array to another location in the same array"
         },
         {
           name: "every",
@@ -114,7 +113,9 @@ export default {
     }
   },
     methods: {
-
+      addForm() {
+        
+      }
       },
       computed: {
         filteredArray(){
