@@ -11,16 +11,15 @@
       >{{ method.name }}</option>
     </b-form-select> -->
     <!-- <p class="explain">{{ selected }}</p> -->
-    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method" v-on:keypress.enter="searchValue()"></b-form-input>
-    {{ searchValue }}
+    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
+    <!-- {{ searchValue }} -->
     <b-list-group>
       <b-list-group-item
         class="text-left"
-        v-for="(method, index) in arrayMethods"
+        v-for="(method, index) in filteredArray"
         v-bind:key="index" 
       ><strong>{{ method.name }}</strong> {{ method.method }}</b-list-group-item>
     </b-list-group>
-    <!-- <b-form-textarea class="example"></b-form-textarea> -->
   </div>
 </template>
 
@@ -31,8 +30,6 @@ export default {
     return {
       header: "Array Helper",
       info: "Use the search below to learn about array methods",
-      // selected: "",
-      // example: "",
       searchValue: "",
       arrayMethods: [
         {
@@ -114,17 +111,20 @@ export default {
           method: "add 1 or more elements to the front of an array"
         }
       ],
-      methods: {
-        searchValue() {
+    
+    }
+  },
+    methods: {
+
+      },
+      computed: {
+        filteredArray(){
           let searchTerm = this.searchValue.toLowerCase();
           return this.arrayMethods.filter(method => {
             return method.name.toLowerCase().includes(searchTerm);
           });
-        // use v-if to target index if index = -1 see error else show matching value and hide others
         }
       }
-    }
-  }
 }
 </script>
 
