@@ -12,7 +12,7 @@
     </b-form-select> -->
     <!-- <p class="explain">{{ selected }}</p> -->
     <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
-    <b-button class="outline-success" @click="showForm()">Show add form</b-button>
+    <!-- <b-button class="outline-success" @click="showForm()">Show add form</b-button> -->
     <b-list-group>
       <b-list-group-item
         class="text-left"
