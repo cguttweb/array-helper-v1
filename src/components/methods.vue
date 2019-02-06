@@ -112,11 +112,6 @@ export default {
       ],
     }
   },
-    methods: {
-      addForm() {
-        
-      }
-      },
       computed: {
         filteredArray(){
           let searchTerm = this.searchValue.toLowerCase();
