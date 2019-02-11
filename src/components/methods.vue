@@ -11,20 +11,19 @@
       >{{ method.name }}</option>
     </b-form-select> -->
     <!-- <p class="explain">{{ selected }}</p> -->
-    <b-form-input class="mb-2" v-model="searchValue" type="text" placeholder="Search for a method"></b-form-input>
-    <!-- <b-button class="outline-success" @click="showForm()">Show add form</b-button> -->
-    <!-- <b-list-group> -->
-      <b-list-group-item
-        class="text-left"
+    <input class="p-2 mb-2" v-model="searchValue" type="text" placeholder="Search for a method" />
+    <form inline>
+      <input class="p-2" placeholder="Method name" type="text" @keyup.enter="addMethod" v-model="newMethodName">
+      <input class="p-2" placeholder="Enter method" type="text" @keyup.enter="addMethod" v-model="newMethod">
+      <button class="btn btn-lg btn-success" @click="addMethod()">Add Method</button>
+    </form>
+      <li
+        class="border-green p-2 text-left"
         v-for="(method, index) in filteredArray"
         v-bind:key="index" 
-      ><strong>{{ method.name }}</strong> {{ method.method }}</b-list-group-item>
-    <!-- </b-list-group> -->
-    <b-form inline>
-      <b-form-input placeholder="Method Name" type="text" v-model="newMethod"></b-form-input>
-      <b-form-input placeholder="Method" type="text" v-model="newMethod"></b-form-input>
-      <button class="btn btn-success" type="submit" @click="addMethod">Add Method</button>
-    </b-form>
+      ><strong>{{ method.name }}</strong> {{ method.method }}</li>
+
+ 
   </div>
 </template>
 
@@ -36,6 +35,7 @@ export default {
       header: "Array Helper",
       info: "Use the search below to learn about array methods",
       searchValue: '',
+      newMethodName: '',
       newMethod: '',
       arrayMethods: [
         {
@@ -120,10 +120,12 @@ export default {
   },
     methods: {
       addMethod(){
-      this.arrayMethods.push({
-          method: this.newMethod
-      });
-      this.newMethod = '';
+        this.arrayMethods.push({
+            name: this.newMethodName,
+            method: this.newMethod
+        });
+        this.newMethodName = '';
+        this.newMethod = '';
       },
     },
       computed: {
@@ -137,12 +139,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.explain {
-  color: #41b883;
-  font-weight: 600;
-  padding-top: 1rem;
-}
+<style lang="scss">
+$vuegreen: #41b883;
 </style>
 
 
