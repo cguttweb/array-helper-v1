@@ -61,7 +61,10 @@ export default {
           method: 'This method will join two or more arrays together',
           example: {
             array1: ['test1', 'test2', 'test3'],
-            array2: ['text1', 'text2', 'text3']
+            array2: ['text1', 'text2', 'text3'],
+            method() {
+              array.concat(array1, array2);
+            }
           }
         },
         {
