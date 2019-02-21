@@ -28,7 +28,7 @@
       </form>
     </div>
     <div class="col-6">
-      <ul class="list-group">
+      <ul class="list-group" @click="copy()">
         <li
           class="list-group-item text-left"
           v-for="(method, index) in filteredArray"
@@ -59,13 +59,7 @@ export default {
         {
           name: 'concat',
           method: 'This method will join two or more arrays together',
-          example: {
-            array1: ['test1', 'test2', 'test3'],
-            array2: ['text1', 'text2', 'text3'],
-            method() {
-              array.concat(array1, array2);
-            }
-          }
+          example: {}
         },
         {
           name: 'copyWithin',
