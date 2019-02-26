@@ -10,8 +10,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // Vue.use(BootstrapVue);
 
+import VueClipboards from 'vue-clipboards';
+
+Vue.use(VueClipboards);
+
 Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
+  render: h => h(App)
 }).$mount('#app');

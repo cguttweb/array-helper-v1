@@ -9,6 +9,7 @@
 
 <script>
 import methods from './components/methods';
+
 // import './components/copy.js';
 
 export default {

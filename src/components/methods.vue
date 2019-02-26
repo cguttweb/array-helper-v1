@@ -24,11 +24,11 @@
           @keyup.enter="addMethod"
           v-model="newMethod"
         >
-        <button class="btn btn-success" type="button" @click="addMethod()">Submit</button>
+        <button class="btn btn-success" type="button" @click="addMethod()">Add Method</button><br>
       </form>
     </div>
-    <div class="col-6">
-      <ul class="list-group" @click="copy()">
+    <div class="col-6" style="width:50%">
+      <ul class="list-group">
         <li
           class="list-group-item text-left"
           v-for="(method, index) in filteredArray"
@@ -55,11 +55,12 @@ export default {
       searchValue: '',
       newMethodName: '',
       newMethod: '',
+      example: '',
+      copyData: '',
       arrayMethods: [
         {
           name: 'concat',
-          method: 'This method will join two or more arrays together',
-          example: {}
+          method: 'This method will join two or more arrays together'
         },
         {
           name: 'copyWithin',
@@ -159,6 +160,7 @@ export default {
     }
   }
 };
+// };
 </script>
 
 <style lang="scss">
