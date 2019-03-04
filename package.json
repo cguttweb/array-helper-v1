@@ -13,6 +13,7 @@
     "npm": "^6.7.0",
     "service": "^0.1.4",
     "vue": "^2.5.21",
+    "vue-clipboard2": "^0.3.0",
     "vue-clipboards": "^1.2.4"
   },
   "devDependencies": {

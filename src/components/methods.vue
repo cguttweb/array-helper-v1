@@ -29,13 +29,14 @@
     </div>
     <div class="col-6" style="width:50%">
       <ul class="list-group">
-        <li
+        <li @click="getExample(method)"
           class="list-group-item text-left"
           v-for="(method, index) in filteredArray"
           v-bind:key="index"
         >
           <strong>{{ method.name }}</strong>
           {{ method.method }}
+          <!-- <button type="button" v-clipboard:copy="message" v-clipboard:success="onCopy" v-clipboard:error="onError">Copy</button> -->
         </li>
       </ul>
     </div>
@@ -55,12 +56,13 @@ export default {
       searchValue: '',
       newMethodName: '',
       newMethod: '',
+      message: '',
       example: '',
-      copyData: '',
       arrayMethods: [
         {
           name: 'concat',
-          method: 'This method will join two or more arrays together'
+          method: 'This method will join two or more arrays together',
+          methodExample: 'test'
         },
         {
           name: 'copyWithin',
@@ -149,6 +151,9 @@ export default {
       });
       this.newMethodName = '';
       this.newMethod = '';
+    },
+    getExample(method) {
+      return (this.message = method);
     }
   },
   computed: {
