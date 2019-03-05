@@ -41,7 +41,7 @@
       </ul>
     </div>
     <div class="col-6">
-      <textarea class="bg-dark col" name="exampleBox" id="exampleBox" rows="40" v-model="example"></textarea>
+      <textarea class="bg-dark col text-white p-3" name="exampleBox" id="exampleBox" rows="40" v-model="example"></textarea>
     </div>
   </div>
 </template>
@@ -62,83 +62,102 @@ export default {
         {
           name: 'concat',
           method: 'This method will join two or more arrays together',
-          methodExample: 'test'
+          methodExample:
+            'let array1 = [1 , 2, 3] let array2 = [4, 5, 6] array1.concat(array2) // output: [1, 2, 3, 4, 5, 6]'
         },
         {
           name: 'copyWithin',
-          method: 'copies part of an array to another location in the same array'
+          method: 'copies part of an array to another location in the same array',
+          methodExample: ''
         },
         {
           name: 'every',
           method:
-            'tests whether all elements in array pass the test given by function provided. This returns true for any condition on an empty array.'
+            'tests whether all elements in array pass the test given by function provided. This returns true for any condition on an empty array.',
+          methodExample: ''
         },
         {
           name: 'filter',
           method:
-            'creates a new array with all elements that pass the test given in the provided function'
+            'creates a new array with all elements that pass the test given in the provided function',
+          methodExample: ''
         },
         {
           name: 'find',
-          method: 'find given value within an array'
+          method: 'find given value within an array',
+          methodExample: ''
         },
         {
           name: 'includes',
           method:
-            'checks whether given value is included in selected array outputs a Boolean value'
+            'checks whether given value is included in selected array outputs a Boolean value',
+          methodExample:
+            'let teams = [liverpool, arsenal, chelsea] teams.includes(liverpool) // output: true'
         },
         {
           name: 'indexOf',
           method:
-            'gives an index value of given element will return -1 if element is not present'
+            'gives an index value of given element will return -1 if element is not present',
+          methodExample: ''
         },
         {
           name: 'join',
-          method: 'join the elements in an array'
+          method: 'join the elements in an array',
+          methodExample: 'let array1 = [1 , 2, 3] array1.join()'
         },
         {
           name: 'lastIndexOf',
           method:
-            'array is searched backwards it gives the last index value of given element will return -1 if not present'
+            'array is searched backwards it gives the last index value of given element will return -1 if not present',
+          methodExample: ''
         },
         {
           name: 'map',
-          method: 'this is an alternative to using sort if there is a number of elements'
+          method: 'this is an alternative to using sort if there is a number of elements',
+          methodExample: ''
         },
         {
           name: 'pop',
-          method: 'remove the last element from an array'
+          method: 'remove the last element from an array',
+          methodExample: ''
         },
         {
           name: 'push',
-          method: 'add element to the end of an array'
+          method: 'add element to the end of an array',
+          methodExample: ''
         },
         {
           name: 'reduce',
-          method: 'reduces an array to a single value'
+          method: 'reduces an array to a single value',
+          methodExample: ''
         },
         {
           name: 'shift',
-          method: 'removes the first element of an array'
+          method: 'removes the first element of an array',
+          methodExample: ''
         },
         {
           name: 'slice',
           method:
-            'returns a shallow copy of portion of an array into a new array object. It does not modify the existing array'
+            'returns a shallow copy of portion of an array into a new array object. It does not modify the existing array',
+          methodExample: ''
         },
         {
           name: 'sort',
           method:
-            'sorts the elements of array in place and returns array. If using sort elements are converted to strings and compared in unicode point value so numbers will take priority'
+            'sorts the elements of array in place and returns array. If using sort elements are converted to strings and compared in unicode point value so numbers will take priority',
+          methodExample: ''
         },
         {
           name: 'splice',
           method:
-            'changes content of an array by removing existing elements and/or adding new elements'
+            'changes content of an array by removing existing elements and/or adding new elements',
+          methodExample: ''
         },
         {
           name: 'unshift',
-          method: 'add 1 or more elements to the front of an array'
+          method: 'add 1 or more elements to the front of an array',
+          methodExample: ''
         }
       ]
     };
@@ -153,7 +172,7 @@ export default {
       this.newMethod = '';
     },
     getExample(method) {
-      return (this.message = method);
+      this.example = method.methodExample;
     }
   },
   computed: {
