@@ -63,7 +63,7 @@ export default {
           name: 'concat',
           method: 'This method will join two or more arrays together',
           methodExample:
-            'let array1 = [1 , 2, 3] let array2 = [4, 5, 6] array1.concat(array2) // output: [1, 2, 3, 4, 5, 6]'
+            'let array1 = [1 , 2, 3] \nlet array2 = [4, 5, 6] \narray1.concat(array2) \n // output: [1, 2, 3, 4, 5, 6]'
         },
         {
           name: 'copyWithin',
