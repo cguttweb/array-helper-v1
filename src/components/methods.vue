@@ -63,7 +63,7 @@ export default {
           name: 'concat',
           method: 'This method will join two or more arrays together',
           methodExample:
-            'let array1 = [1 , 2, 3] \nlet array2 = [4, 5, 6] \narray1.concat(array2) \n // output: [1, 2, 3, 4, 5, 6]'
+            'let array1 = [1 , 2, 3] \nlet array2 = [4, 5, 6] \narray1.concat(array2) \n// output: [1, 2, 3, 4, 5, 6]'
         },
         {
           name: 'copyWithin',
@@ -92,13 +92,19 @@ export default {
           method:
             'checks whether given value is included in selected array outputs a Boolean value',
           methodExample:
-            'let teams = [liverpool, arsenal, chelsea] teams.includes(liverpool) // output: true'
+            'let teams = ["liverpool", "arsenal", "chelsea"]\r teams.includes("liverpool")\r // output: true'
         },
         {
           name: 'indexOf',
           method:
             'gives an index value of given element will return -1 if element is not present',
           methodExample: ''
+        },
+        {
+          name: 'isArray',
+          method: 'checks whether the passed value is an array and returns true or false',
+          methodExample:
+            'Array.isArray("hello")\r// outputs: false \rArray.isArray([1, 2, 3]) \r// outputs true'
         },
         {
           name: 'join',
@@ -124,7 +130,8 @@ export default {
         {
           name: 'push',
           method: 'add element to the end of an array',
-          methodExample: ''
+          methodExample:
+            'let myArray = [1, 2, 3, 4, 5] \rmyArray.push("test") \r// output: [1, 2, 3, 4, 5, "test"]'
         },
         {
           name: 'reduce',
@@ -134,7 +141,8 @@ export default {
         {
           name: 'shift',
           method: 'removes the first element of an array',
-          methodExample: ''
+          methodExample:
+            'let myArray = ["hello", "world"];\r myArray.shift()\r // output: ["world"]'
         },
         {
           name: 'slice',
@@ -157,7 +165,8 @@ export default {
         {
           name: 'unshift',
           method: 'add 1 or more elements to the front of an array',
-          methodExample: ''
+          methodExample:
+            'let myArray = ["you are learning javascript"]\r myArray.unshift("Hello")\r // output: ["Hello", "you are learning JavaScript"]'
         }
       ]
     };

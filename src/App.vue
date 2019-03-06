@@ -10,13 +10,9 @@
 <script>
 import methods from './components/methods';
 
-// import './components/copy.js';
-
 export default {
   components: {
-    // Header,
     methods
-    // ExampleBox
   }
 };
 </script>
