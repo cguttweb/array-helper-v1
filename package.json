@@ -8,27 +8,25 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@vue/cli": "^3.3.0",
-    "bootstrap": "^4.2.1",
-    "npm": "^6.7.0",
-    "service": "^0.1.4",
-    "vue": "^2.5.21",
-    "vue-clipboard2": "^0.3.0",
-    "vue-clipboards": "^1.2.4"
+    "@vue/cli": "^3.4.1",
+    "bootstrap": "^4.3.1",
+    "core-js": "^2.6.5",
+    "npm": "^6.9.0",
+    "vue": "^2.6.8"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.3.0",
-    "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-service": "^3.3.0",
+    "@vue/cli-plugin-babel": "^3.4.1",
+    "@vue/cli-plugin-eslint": "^3.4.1",
+    "@vue/cli-service": "^3.4.1",
     "babel-eslint": "^10.0.1",
-    "css-loader": "^2.1.0",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.15.1",
+    "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.9.0",
     "prettier": "^1.16.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "vue-template-compiler": "^2.5.21",
-    "webpack-cli": "^3.2.1"
+    "vue-template-compiler": "^2.6.8",
+    "webpack-cli": "^3.2.3"
   }
 }

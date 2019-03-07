@@ -27,7 +27,7 @@
         <button class="btn btn-success" type="button" @click="addMethod()">Add Method</button><br>
       </form>
     </div>
-    <div class="col-6" style="width:50%">
+    <div class="col-6">
       <ul class="list-group">
         <li @click="getExample(method)"
           class="list-group-item text-left"
@@ -41,7 +41,7 @@
       </ul>
     </div>
     <div class="col-6">
-      <textarea class="bg-dark col text-white p-3" name="exampleBox" id="exampleBox" rows="40" v-model="example"></textarea>
+      <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="30" v-model="example"></textarea>
     </div>
   </div>
 </template>
@@ -63,18 +63,20 @@ export default {
           name: 'concat',
           method: 'This method will join two or more arrays together',
           methodExample:
-            'let array1 = [1 , 2, 3] \nlet array2 = [4, 5, 6] \narray1.concat(array2) \n// output: [1, 2, 3, 4, 5, 6]'
+            'let array1 = [1 , 2, 3]\r\rlet array2 = [4, 5, 6]\r\rarray1.concat(array2)\r\r// output: [1, 2, 3, 4, 5, 6]'
         },
         {
           name: 'copyWithin',
           method: 'copies part of an array to another location in the same array',
-          methodExample: ''
+          methodExample:
+            'let array = ["a", "b", "c", "d", "e"]\r\rarray.copyWithin(1, 3, 4)\r\routput: ["a", "d", "e", "d", "e"]'
         },
         {
           name: 'every',
           method:
             'tests whether all elements in array pass the test given by function provided. This returns true for any condition on an empty array.',
-          methodExample: ''
+          methodExample:
+            'let array1 = [1, 30, 39, 29, 10, 13];\r\rfunction checkNumbers(number){ \rreturn number > 20; \r\r}\r\rnumArray.every(checkNumbers) //output: false as not all numbers are above 20\r\r//Note: this will return true for any empty array'
         },
         {
           name: 'filter',
@@ -84,71 +86,90 @@ export default {
         },
         {
           name: 'find',
-          method: 'find given value within an array',
-          methodExample: ''
+          method: 'returns value of first element that matches the provided function',
+          methodExample:
+            'let cities = ["London", "Liverpool", "Southampton", "New York", "Boston", "Toronto"]\r\rlet findCities = cities.find(function(el){\r return el.length > 6; \r});\r\r// output: "Liverpool"'
+        },
+        {
+          name: 'forEach',
+          method:
+            'similar to a for loop this will execute the provided function for each element in the array',
+          methodExample:
+            'let cities = ["London", "Liverpool", "New York", "Boston", "Toronto"]\r\rcities.forEach(function(el){\rconsole.log(el)\r})\r\rLondon\rLiverpool\rNew York\rBoston\rToronto'
         },
         {
           name: 'includes',
           method:
             'checks whether given value is included in selected array outputs a Boolean value',
           methodExample:
-            'let teams = ["liverpool", "arsenal", "chelsea"]\r teams.includes("liverpool")\r // output: true'
+            'let teams = ["liverpool", "arsenal", "chelsea"]\r\rteams.includes("liverpool")\r\r// output: true'
         },
         {
           name: 'indexOf',
-          method:
-            'gives an index value of given element will return -1 if element is not present',
-          methodExample: ''
+          method: 'gives an index value of given element.',
+          methodExample:
+            'let teams = ["Liverpool", "Man City", "Tottenham Hotspur", "Arsenal"]\r\rteams.indexOf("Arsenal")\r\routput:3'
         },
         {
           name: 'isArray',
           method: 'checks whether the passed value is an array and returns true or false',
           methodExample:
-            'Array.isArray("hello")\r// outputs: false \rArray.isArray([1, 2, 3]) \r// outputs true'
+            'Array.isArray("hello")\r\r//outputs: false\r\rArray.isArray([1, 2, 3])\r\r//output: true'
         },
         {
           name: 'join',
           method: 'join the elements in an array',
-          methodExample: 'let array1 = [1 , 2, 3] array1.join()'
+          methodExample: 'let array1 = [1, 2, 3]\r\rarray1.join(" ")\r\r//output: 1 2 3'
         },
         {
           name: 'lastIndexOf',
           method:
             'array is searched backwards it gives the last index value of given element will return -1 if not present',
-          methodExample: ''
+          methodExample:
+            'let cities = ["London", "Liverpool", "Southampton", "New York", "Boston", "Toronto"]\r\rcities.lastIndexOf(Boston)\r\r//output: 4'
         },
         {
           name: 'map',
           method: 'this is an alternative to using sort if there is a number of elements',
-          methodExample: ''
+          methodExample:
+            'const numbers = [2, 34, 76, 218]\r\rconst doubledNum = numbers.map((num) => {return num * 2;});\r\r// output: [4, 68, 152, 436]\r\rlet cities = ["London", "New York", "Boston", "Toronto"]\r\rconst cities2 = cities.map(function(city){\rcity.length > 6;\r})\r\routput: ["false","true","false","true"]'
         },
         {
           name: 'pop',
           method: 'remove the last element from an array',
-          methodExample: ''
+          methodExample:
+            'let myArray = ["learning", "about", "array", "methods"]\r\rmyArray.pop()\r\r// output: ["learning", "about", "array"]'
         },
         {
           name: 'push',
           method: 'add element to the end of an array',
           methodExample:
-            'let myArray = [1, 2, 3, 4, 5] \rmyArray.push("test") \r// output: [1, 2, 3, 4, 5, "test"]'
+            'let myArray = [1, 2, 3, 4, 5]\r\rmyArray.push("test")\r\r//output: [1, 2, 3, 4, 5, "test"]'
         },
         {
           name: 'reduce',
           method: 'reduces an array to a single value',
-          methodExample: ''
+          methodExample:
+            'let num = [1, 3, 5, 8, 10]\r\rconst reducer = (accumulator, currentValue) => accumulator + currentValue;\r\r//output: 27'
+        },
+        {
+          name: 'reverse',
+          method: 'reverses the values in the provided array',
+          methodExample:
+            'let myArray = ["one", "two", "three"]\r\rmyArray.reverse()\r\r //output: ["three", "two", "one"]'
         },
         {
           name: 'shift',
           method: 'removes the first element of an array',
           methodExample:
-            'let myArray = ["hello", "world"];\r myArray.shift()\r // output: ["world"]'
+            'let myArray = ["hello", "world"];\r\rmyArray.shift()\r\r // output: ["world"]'
         },
         {
           name: 'slice',
           method:
-            'returns a shallow copy of portion of an array into a new array object. It does not modify the existing array',
-          methodExample: ''
+            'returns a copy of part of an array into a new array object. It does not modify the existing array',
+          methodExample:
+            'let cities = ["London", "Liverpool", "Southampton", "New York", "Boston", "Toronto"]\r\rcities.slice(1, 4)\r\r// Starts at 1st index extracts elements 1, 2 and 3\r\r//output:  ["Liverpool", "Southampton", "New York"]\r\r// cities is still ["London", "Liverpool", "Southampton", "New York", "Boston", "Toronto"]'
         },
         {
           name: 'sort',
@@ -160,13 +181,20 @@ export default {
           name: 'splice',
           method:
             'changes content of an array by removing existing elements and/or adding new elements',
-          methodExample: ''
+          methodExample:
+            'let cities = ["London", "Liverpool", "Southampton", "New York", "Boston", "Toronto"]\r\rcities.splice(3, 1, "Philadephia")\r\r//replaces 1 element at 3rd index so New York is replaced by Philadelphia\r\r//outputs: ["London", "Liverpool", "Southampton", "Philadephia", "Boston", "Toronto"]'
+        },
+        {
+          name: 'toString',
+          method: 'converts the array elements to a string',
+          methodExample:
+            'let myArray = [1, "two", 3, "four"]\r\rmyArray.toString()\r\r//output: "1,two,3,four"'
         },
         {
           name: 'unshift',
           method: 'add 1 or more elements to the front of an array',
           methodExample:
-            'let myArray = ["you are learning javascript"]\r myArray.unshift("Hello")\r // output: ["Hello", "you are learning JavaScript"]'
+            'let myArray = ["you are learning javascript array methods"]\r\rmyArray.unshift("Hello")\r\r// output: ["Hello", "you are learning JavaScript array methods"]'
         }
       ]
     };
@@ -198,6 +226,9 @@ export default {
 
 <style lang="scss">
 $vuegreen: #41b883;
+#example-box {
+  color: $vuegreen;
+}
 </style>
 
 
