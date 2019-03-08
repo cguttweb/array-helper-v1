@@ -27,7 +27,7 @@
         <button class="btn btn-success" type="button" @click="addMethod()">Add Method</button><br>
       </form>
     </div>
-    <div class="col-6">
+    <div class="col-6" style="height:720px;overflow:scroll;padding-right:0;">
       <ul class="list-group">
         <li @click="getExample(method)"
           class="list-group-item text-left"
@@ -41,7 +41,9 @@
       </ul>
     </div>
     <div class="col-6">
-      <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="30" v-model="example"></textarea>
+      <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="10" v-model="example">
+      </textarea>
+      <button type="button" @click="runCode">Run Code</button>
     </div>
   </div>
 </template>
@@ -76,13 +78,14 @@ export default {
           method:
             'tests whether all elements in array pass the test given by function provided. This returns true for any condition on an empty array.',
           methodExample:
-            'let array1 = [1, 30, 39, 29, 10, 13];\r\rfunction checkNumbers(number){ \rreturn number > 20; \r\r}\r\rnumArray.every(checkNumbers) //output: false as not all numbers are above 20\r\r//Note: this will return true for any empty array'
+            'let array1 = [1, 30, 39, 29, 10, 13];\r\rfunction checkNumbers(number){\r  return number > 20;\r}\r\rnumArray.every(checkNumbers)\r //output: false as not all numbers are above 20\r//Note: this will return true for any empty array'
         },
         {
           name: 'filter',
           method:
             'creates a new array with all elements that pass the test given in the provided function',
-          methodExample: ''
+          methodExample:
+            'let fruits = ["orange", "strawberry", "blueberry", "banana", "apple"]\rfruits.filter(function(fruit){ return fruit.length < 6 });\r// output: ["apple"]'
         },
         {
           name: 'find',
@@ -95,7 +98,7 @@ export default {
           method:
             'similar to a for loop this will execute the provided function for each element in the array',
           methodExample:
-            'let cities = ["London", "Liverpool", "New York", "Boston", "Toronto"]\r\rcities.forEach(function(el){\rconsole.log(el)\r})\r\rLondon\rLiverpool\rNew York\rBoston\rToronto'
+            'let cities = ["London", "Liverpool", "New York", "Boston"]\r\rcities.forEach(function(el){\rconsole.log(el)\r})\r//output: \rLondon\rLiverpool\rNew York\rBoston'
         },
         {
           name: 'includes',
@@ -108,13 +111,13 @@ export default {
           name: 'indexOf',
           method: 'gives an index value of given element.',
           methodExample:
-            'let teams = ["Liverpool", "Man City", "Tottenham Hotspur", "Arsenal"]\r\rteams.indexOf("Arsenal")\r\routput:3'
+            'let teams = ["Liverpool", "Man City", "Tottenham Hotspur", "Arsenal"]\r\rteams.indexOf("Arsenal")\r\r// output: 3'
         },
         {
           name: 'isArray',
           method: 'checks whether the passed value is an array and returns true or false',
           methodExample:
-            'Array.isArray("hello")\r\r//outputs: false\r\rArray.isArray([1, 2, 3])\r\r//output: true'
+            'Array.isArray("hello")\r\r//outputs: false as hello is a string\r\rArray.isArray([1, 2, 3])\r\r//output: true'
         },
         {
           name: 'join',
@@ -132,7 +135,7 @@ export default {
           name: 'map',
           method: 'this is an alternative to using sort if there is a number of elements',
           methodExample:
-            'const numbers = [2, 34, 76, 218]\r\rconst doubledNum = numbers.map((num) => {return num * 2;});\r\r// output: [4, 68, 152, 436]\r\rlet cities = ["London", "New York", "Boston", "Toronto"]\r\rconst cities2 = cities.map(function(city){\rcity.length > 6;\r})\r\routput: ["false","true","false","true"]'
+            'const numbers = [2, 34, 76, 218]\r\rconst doubledNum = numbers.map(function(num) {\r return num * 2;\r});\r\r// output: [4, 68, 152, 436]\r\rlet cities = ["London", "New York", "Boston", "Toronto"]\r\rconst cities2 = cities.map(function(city){\r return city.length > 6;\r})\r\routput: ["false","true","false","true"]'
         },
         {
           name: 'pop',
@@ -173,9 +176,9 @@ export default {
         },
         {
           name: 'sort',
-          method:
-            'sorts the elements of array in place and returns array. If using sort elements are converted to strings and compared in unicode point value so numbers will take priority',
-          methodExample: ''
+          method: 'sorts the elements of array in place and returns array.',
+          methodExample:
+            'let numbers = [24, 512, 76, 123]\rnumbers.sort()\r//output: [123, 24, 512, 76]\rlet months = ["Feb", "March", "April", "July"]\r//output: ["April", "Feb", "July", "March"]'
         },
         {
           name: 'splice',
@@ -210,7 +213,8 @@ export default {
     },
     getExample(method) {
       this.example = method.methodExample;
-    }
+    },
+    runCode() {}
   },
   computed: {
     filteredArray() {
@@ -226,9 +230,6 @@ export default {
 
 <style lang="scss">
 $vuegreen: #41b883;
-#example-box {
-  color: $vuegreen;
-}
 </style>
 
 
