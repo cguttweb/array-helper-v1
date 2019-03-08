@@ -41,9 +41,9 @@
       </ul>
     </div>
     <div class="col-6">
-      <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="10" v-model="example">
+      <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="15" v-model="example">
       </textarea>
-      <button type="button" @click="runCode">Run Code</button>
+      <!-- <button type="button" @click="runCode">Run Code</button> -->
     </div>
   </div>
 </template>
@@ -85,7 +85,7 @@ export default {
           method:
             'creates a new array with all elements that pass the test given in the provided function',
           methodExample:
-            'let fruits = ["orange", "strawberry", "blueberry", "banana", "apple"]\rfruits.filter(function(fruit){\r return fruit.length < 6 });\r// output: ["apple"]'
+            'let fruits = ["orange", "strawberry", "blueberry", "banana", "apple"]\rfruits.filter(function(fruit){\r return fruit.length < 6 \r});\r// output: ["apple"]'
         },
         {
           name: 'find',
