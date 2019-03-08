@@ -85,7 +85,7 @@ export default {
           method:
             'creates a new array with all elements that pass the test given in the provided function',
           methodExample:
-            'let fruits = ["orange", "strawberry", "blueberry", "banana", "apple"]\rfruits.filter(function(fruit){ return fruit.length < 6 });\r// output: ["apple"]'
+            'let fruits = ["orange", "strawberry", "blueberry", "banana", "apple"]\rfruits.filter(function(fruit){\r return fruit.length < 6 });\r// output: ["apple"]'
         },
         {
           name: 'find',
@@ -151,7 +151,7 @@ export default {
         },
         {
           name: 'reduce',
-          method: 'reduces an array to a single value',
+          method: 'reduces an array to a single value using a reductor function',
           methodExample:
             'let num = [1, 3, 5, 8, 10]\r\rconst reducer = (accumulator, currentValue) => accumulator + currentValue;\r\r//output: 27'
         },
