@@ -7,23 +7,26 @@
         class="mb-3 p-2 align-center"
         v-model="searchValue"
         type="text"
-        placeholder="Search for a method"
-      >
+        placeholder="Search for a method">
       <form>
         <input
           class="mb-3 p-2"
           placeholder="Method name"
           type="text"
           @keyup.enter="addMethod"
-          v-model="newMethodName"
-        >
+          v-model="newMethodName">
         <input
           class="p-2"
           placeholder="Enter method"
           type="text"
           @keyup.enter="addMethod"
-          v-model="newMethod"
-        >
+          v-model="newMethod">
+        <input
+          class="p-2"
+          placeholder="Enter example"
+          type="text"
+          @keyup.enter="addExample"
+          v-model="newMethodExample">
         <button class="btn btn-success" type="button" @click="addMethod()">Add Method</button><br>
       </form>
     </div>
@@ -36,7 +39,6 @@
         >
           <strong>{{ method.name }}</strong>
           {{ method.method }}
-          <!-- <button type="button" v-clipboard:copy="message" v-clipboard:success="onCopy" v-clipboard:error="onError">Copy</button> -->
         </li>
       </ul>
     </div>
@@ -58,6 +60,7 @@ export default {
       searchValue: '',
       newMethodName: '',
       newMethod: '',
+      newMethodExample: '',
       message: '',
       example: '',
       arrayMethods: [
@@ -206,15 +209,16 @@ export default {
     addMethod() {
       this.arrayMethods.push({
         name: this.newMethodName,
-        method: this.newMethod
+        method: this.newMethod,
+        methodExample: this.newMethodExample
       });
       this.newMethodName = '';
       this.newMethod = '';
+      this.newMethodExample = '';
     },
     getExample(method) {
       this.example = method.methodExample;
-    },
-    runCode() {}
+    }
   },
   computed: {
     filteredArray() {
@@ -222,6 +226,17 @@ export default {
       return this.arrayMethods.filter(method => {
         return method.name.toLowerCase().includes(searchTerm);
       });
+    }
+  },
+  mounted() {
+    if (localStorage.name) {
+      this.name = localStorage.newName;
+    }
+    if (localStorage.newMethod) {
+      this.method = localStorage.newMethod;
+    }
+    if (localStorage.newMethodExample) {
+      this.example = localStorage.newMethodExample;
     }
   }
 };
