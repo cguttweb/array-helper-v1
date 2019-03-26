@@ -230,7 +230,7 @@ export default {
   },
   mounted() {
     if (localStorage.name) {
-      this.name = localStorage.newName;
+      this.name = localStorage.newMethodName;
     }
     if (localStorage.newMethod) {
       this.method = localStorage.newMethod;
