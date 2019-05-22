@@ -229,15 +229,22 @@ export default {
     }
   },
   mounted() {
-    if (localStorage.name) {
-      this.name = localStorage.newMethodName;
+    if (localStorage.getItem('arrayMethods')) {
+      try {
+        this.arrayMethods = JSON.parse(localStorage.getItem('arrayMethods'));
+      } catch (e) {
+        localStorage.removeItem('arrayMethods');
+      }
     }
-    if (localStorage.newMethod) {
-      this.method = localStorage.newMethod;
-    }
-    if (localStorage.newMethodExample) {
-      this.example = localStorage.newMethodExample;
-    }
+    // if (localStorage.name) {
+    //   this.name = localStorage.newMethodName;
+    // }
+    // if (localStorage.newMethod) {
+    //   this.method = localStorage.newMethod;
+    // }
+    // if (localStorage.newMethodExample) {
+    //   this.example = localStorage.newMethodExample;
+    // }
   }
 };
 // };
