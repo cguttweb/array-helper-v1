@@ -77,9 +77,15 @@ export default {
             'let array = ["a", "b", "c", "d", "e"]\r\rarray.copyWithin(1, 3, 4)\r\routput: ["a", "d", "e", "d", "e"]'
         },
         {
+          name: 'entries',
+          method: 'returns a new array iterator object with key/value pairs for each element',
+          methodExample:
+            'let myArray = ["a", "b", "c", "d"]\r\rlet iterator = array.entries()\riterator.next().value\r\routput: [0, "a"]\riterator.next().value\routput:[1, "b"]'
+        },
+        {
           name: 'every',
           method:
-            'tests whether all elements in array pass the test given by function provided. This returns true for any condition on an empty array.',
+            'tests whether all elements in array pass the test given by function provided. This returns true for any condition on an empty array',
           methodExample:
             'let array1 = [1, 30, 39, 29, 10, 13];\r\rfunction checkNumbers(number){\r  return number > 20;\r}\r\rnumArray.every(checkNumbers)\r //output: false as not all numbers are above 20\r//Note: this will return true for any empty array'
         },
@@ -136,7 +142,7 @@ export default {
         },
         {
           name: 'map',
-          method: 'this is an alternative to using sort if there is a number of elements',
+          method: 'this creates a new array with the results of the given function',
           methodExample:
             'const numbers = [2, 34, 76, 218]\r\rconst doubledNum = numbers.map(function(num) {\r return num * 2;\r});\r\r// output: [4, 68, 152, 436]\r\rlet cities = ["London", "New York", "Boston", "Toronto"]\r\rconst cities2 = cities.map(function(city){\r return city.length > 6;\r})\r\routput: ["false","true","false","true"]'
         },
@@ -229,13 +235,16 @@ export default {
     }
   },
   mounted() {
-    if (localStorage.getItem('arrayMethods')) {
-      try {
-        this.arrayMethods = JSON.parse(localStorage.getItem('arrayMethods'));
-      } catch (e) {
-        localStorage.removeItem('arrayMethods');
-      }
+    if (localStorage.getItem('arrayMethods') === null) {
+      arrayMethods = [];
+    } else {
+      arrayMethods = JSON.parse(localStorage.getItems('arraymethods'));
     }
+      // try {
+      //   this.arrayMethods = JSON.parse(localStorage.getItem('arrayMethods'));
+      // } catch (e) {
+      //   localStorage.removeItem('arrayMethods');
+      // }
     // if (localStorage.name) {
     //   this.name = localStorage.newMethodName;
     // }
