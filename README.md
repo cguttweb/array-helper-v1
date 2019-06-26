@@ -1,5 +1,9 @@
 # array-helper
 
+The first app I have built and finished.
+
+Thi is built with the Vue-cli 
+
 ## Project setup
 ```
 npm install
