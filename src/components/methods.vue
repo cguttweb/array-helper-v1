@@ -234,12 +234,6 @@ export default {
       });
     }
   },
-  mounted() {
-    if (localStorage.getItem('arrayMethods') === null) {
-      arrayMethods = [];
-    } else {
-      arrayMethods = JSON.parse(localStorage.getItems('arraymethods'));
-    }
       // try {
       //   this.arrayMethods = JSON.parse(localStorage.getItem('arrayMethods'));
       // } catch (e) {
@@ -254,7 +248,6 @@ export default {
     // if (localStorage.newMethodExample) {
     //   this.example = localStorage.newMethodExample;
     // }
-  }
 };
 // };
 </script>
