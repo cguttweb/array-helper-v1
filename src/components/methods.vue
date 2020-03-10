@@ -45,7 +45,7 @@
     <div class="col-6">
       <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="15" v-model="example">
       </textarea>
-      <!-- <button type="button" @click="runCode">Run Code</button> -->
+      <button type="button" @click="runCode">Run Code</button>
     </div>
   </div>
 </template>
@@ -224,6 +224,9 @@ export default {
     },
     getExample(method) {
       this.example = method.methodExample;
+    }, 
+    runCode(){
+      
     }
   },
   computed: {
