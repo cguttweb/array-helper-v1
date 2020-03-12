@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <div class="col-12">
-      <h1>{{ header }}</h1>
+      <transition name="fade">
+        <h1>{{ header }}</h1>
+      </transition>
       <p>{{ info }}</p>
       <input
         class="mb-3 p-2 align-center"
@@ -257,6 +259,25 @@ export default {
 
 <style lang="scss">
 $vuegreen: #41b883;
+
+.fade-enter {
+  // only attached for once at beginning
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+  // opacity: 1;
+}
+
+.fade-leave {
+// opacity: 1
+}
+
+.fade-leave-active {
+  transition: opacity 1s;
+  opacity: 0;
+}
 </style>
 
 
