@@ -47,7 +47,7 @@
     <div class="col-6">
       <textarea class="bg-dark col pt-3 text-white" name="exampleBox" id="exampleBox" rows="15" v-model="example">
       </textarea>
-      <button type="button" @click="runCode">Run Code</button>
+      <!-- <button type="button" @click="runCode">Run Code</button> -->
     </div>
   </div>
 </template>
@@ -223,12 +223,10 @@ export default {
       this.newMethodName = '';
       this.newMethod = '';
       this.newMethodExample = '';
+      this.saveMethods();
     },
     getExample(method) {
       this.example = method.methodExample;
-    }, 
-    runCode(){
-      
     }
   },
   computed: {
@@ -239,22 +237,12 @@ export default {
       });
     }
   },
-      // try {
-      //   this.arrayMethods = JSON.parse(localStorage.getItem('arrayMethods'));
-      // } catch (e) {
-      //   localStorage.removeItem('arrayMethods');
-      // }
-    // if (localStorage.name) {
-    //   this.name = localStorage.newMethodName;
-    // }
-    // if (localStorage.newMethod) {
-    //   this.method = localStorage.newMethod;
-    // }
-    // if (localStorage.newMethodExample) {
-    //   this.example = localStorage.newMethodExample;
-    // }
+  mounted(){
+    if(localStorage.arrayMethods){
+      this.newMethodName = localStorage.newMethodName;
+    }
+  }
 };
-// };
 </script>
 
 <style lang="scss">
