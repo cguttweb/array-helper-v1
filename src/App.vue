@@ -3,7 +3,7 @@
     <transition name="fade">
       <img class="" alt="Vue logo" src="./assets/logo.png">
     </transition>
-    <div class="row">
+    <div class="container-fluid">
       <methods></methods>
     </div>
   </div>
