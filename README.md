@@ -1,37 +1,8 @@
 # array-helper
 
-This page is built with the Vue-cli
+This page is built with the Vue-cli and styled with Bootstrap
 
-## Project setup
+To look at:
 
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Functionality to be able to save new methods added
+- editability of examples and the ability to change them
